@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+main {
+    padding-top: 7.5vh;
+}
+.title {
+    height: 92.5vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/cfopHome.png);
+    background-position: center;
+    background-size: cover;
+}
+/*
+.homeTitle {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    color: white;
+    text-align: center;
+}
+*/
+.homeTitle {
+    padding: 37.25vh 0;
+    color: white;
+    text-align: center;
+}
+.homeTitle h1 {
+    font-size: 6vh;
+}
+.homeTitle p {
+    font-size: 3vh;
+}
+.heading {
+    color: black;
+    text-align: center;
+    padding: 2em;
+}
+
+.stepHeading {
+    color: black;
+    text-align: center;
+    padding: 2em;
+}
+
+.body {
+    color: black;
+    text-align: center;
+    padding-left: 10em;
+    padding-right: 10em;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+}
+nav img {
+    width: 15em;
+    margin-left: 5em;
+}
+.nav-links {
+    flex: 1;
+    text-align: right;
+    margin-right: 10em;
+}
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+}
+.nav-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2em;
+}
+.nav-links ul li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+.infoHome { 
+    margin: 2em;
+}
+/*
+.navigation {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navigation li {
+    float: left;
+}
+
+.navigation li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 1em 1em;
+    text-decoration: none;
+}
+
+.navigation li a:hover {
+    background-color: #111;
+}
+*/
