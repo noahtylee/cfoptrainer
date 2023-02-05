@@ -3,6 +3,10 @@
     padding: 0;
     font-family: 'Poppins', sans-serif;
 }
+img {
+    width: 100%;
+    height: auto;
+}
 main {
     padding-top: 7.5vh;
 }
@@ -24,16 +28,197 @@ main {
 }
 */
 .homeTitle {
-    padding: 37.25vh 0;
+    padding: 30.25vh 0;
     color: white;
     text-align: center;
 }
 .homeTitle h1 {
-    font-size: 6vh;
+    font-size: 10vh;
 }
 .homeTitle p {
+    font-size: 6vh;
+}
+.infoLearn { 
+    height: 92.5vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/cfopLearn.png);
+    background-position: center;
+    background-size: cover;
+}
+.headingLearn {
+    padding: 30.25vh 0;
+    color: white;
+    text-align: center;
+}
+.headingLearn h1 {
+    font-size: 10vh;
+}
+.headingLearn p {
+    font-size: 4vh;
+    margin: 0 20vh;
+}
+.stepsIntro {
+    text-align: center;
+    padding: 10vh;
+}
+.stepsIntro h2 {
+    font-size: 6vh;
+}
+.stepsIntro p {
     font-size: 3vh;
 }
+.steps {
+    display: grid;
+    grid-gap: 10vh;
+    grid-template-areas:
+        "cross f2l"
+        "oll pll";
+}
+.steps > button {
+    border-radius: 2vh;
+    border: 2px solid #000000;
+}
+.stepsCross {
+    color: white;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/cfopCross.png);
+    background-position: center;
+    background-size: 100%;
+    padding: 10vh 0;
+    margin-left: 10vh;
+    text-align: center;
+    font-size: 10vh;
+    cursor: pointer;
+}
+.stepsF2l {
+    color: white;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/cfopF2L.png);
+    background-position: center;
+    background-size: 100%;
+    padding: 10vh 9vh;
+    margin-right: 10vh;
+    text-align: center;
+    font-size: 10vh;
+    cursor: pointer;
+}
+.stepsOll {
+    color: white;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/cfopOLL.png);
+    background-position: center;
+    background-size: 100%;
+    padding: 10vh 0;
+    margin-left: 10vh;
+    margin-bottom: 10vh;
+    text-align: center;
+    font-size: 10vh;
+    cursor: pointer;
+}
+.stepsPll {
+    color: white;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/cfopPLL.png);
+    background-position: center;
+    background-size: 100%;
+    padding: 10vh 0;
+    margin-right: 10vh;
+    margin-bottom: 10vh;
+    text-align: center;
+    font-size: 10vh;
+    cursor: pointer;
+}
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: none;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+    box-shadow: 5px 5px;
+}
+.popup.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+.popupHeader {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.popupHeader .popupTitle {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.popupHeader .popupClose {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.popupContent {
+    padding: 10px 15px;
+}
+#overlay {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    pointer-events: none;
+}
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+/*
+.popup .overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0, 0.7);
+    z-index: 1;
+}
+.popup .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    background: #fff;
+    width: 450px;
+    height: 220px;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.popup .close-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    background: #222;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+}
+.popup.active .overlay {
+    display: block;
+}
+.popup.active .content {
+    transition: all 399ms ease-in-out;
+    transform: translate(-50%,-50%) scale(1);
+}
+*/
+/*
 .heading {
     color: black;
     text-align: center;
@@ -52,6 +237,7 @@ main {
     padding-left: 10em;
     padding-right: 10em;
 }
+*/
 nav {
     display: flex;
     justify-content: space-between;
@@ -60,25 +246,26 @@ nav {
     position: fixed;
     width: 100%;
     overflow: hidden;
+    z-index: 20;
 }
 nav img {
-    width: 15em;
-    margin-left: 5em;
+    width: 25.5vh;
+    margin-left: 8.5vh;
 }
 .nav-links {
     flex: 1;
     text-align: right;
-    margin-right: 10em;
+    margin-right: 17vh;
 }
 .nav-links ul li {
     list-style: none;
     display: inline-block;
-    padding: 8px 12px;
+    padding: 0.5vh 0.75vh;
 }
 .nav-links ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 2em;
+    font-size: 3.4vh;
 }
 .nav-links ul li::after {
     content: '';
@@ -92,8 +279,162 @@ nav img {
 .nav-links ul li:hover::after{
     width: 100%;
 }
+.learn-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 1vh 2vh;
+    font-size: 3vh;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    margin-top: 5vh;
+}
+.learn-btn:hover {
+    border: 1px solid #f44336;
+    background: #f44336;
+    transition: 1s;
+}
 .infoHome { 
-    margin: 2em;
+    padding: 2em;
+    display: flex;
+}
+.infoHome p {
+    font-size: 5vh;
+    font-weight: 700;
+    margin-left: 5vh;
+    margin-top: 5vh;
+}
+.infoImg {
+    width: 30%;
+    height: auto;
+    margin: 0 10vh;
+}
+.steps button:hover {
+    transform: scale(1.2) perspective(1px);
+    transition: 0.5s;
+}
+.f2lHeading {
+    font-size: 4vh;
+    text-align: center;
+}
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+    background-color: #c9c9c9;
+}
+.footer h4 {
+    margin-bottom: 1vh;
+    margin-top: 20px;
+    font-weight: 600;
+}
+.footer a {
+    color: black;
+}
+.icons .fa {
+    color: #f44336;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+    margin-bottom: 1vh;
+}
+.f2lPanels {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2.5fr 1fr;
+}
+.leftPanelF2l button {
+    text-decoration: none;
+    color: black;
+    border: 0.5vh solid black;
+    border-radius: 2vh;
+    font-size: 3vh;
+    background: #00ffbb;
+    position: relative;
+    cursor: pointer;
+    padding: 1vh;
+    margin: 5vh;
+}
+.leftPanelF2l input {
+    margin: 2vh 5vh;
+}
+.leftPanelF2l label {
+    font-size: 1.5vw;
+}
+.centerPanelF2l {
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+    height: 80.2vh;
+}
+#tempCentral {
+    display: block;
+    text-align: center;
+    font-size: 10vh;
+    margin: 0 10vh;
+    color: red;
+}
+#centralDisplay {
+    display: none;
+}
+.centerPanelF2l h2 {
+    text-align: center;
+}
+.centerPanelF2l img {
+    display: block;
+    width: auto;
+    height: 40vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1vh;
+    margin-bottom: 0;
+}
+.timerPosition {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+}
+.timerF2l {
+    font-size: 10vh;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1vh;
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
+}
+#nextCase {
+    display: block;
+    text-decoration: none;
+    color: black;
+    border: 0.5vh solid black;
+    border-radius: 1vh;
+    font-size: 2.5vh;
+    background: #00ffbb;
+    position: relative;
+    cursor: pointer;
+    margin: 0 auto;
+    padding: 1%;
+}
+#solutionsF2l {
+    display: none;
+    text-align: center;
+    font-size: 3vh;
+    margin-top: 3vh;
+}
+#statsF2l {
+    text-decoration: none;
+    color: black;
+    border: 0.5vh solid black;
+    border-radius: 1vh;
+    font-size: 2.5vh;
+    background: #00ffbb;
+    position: relative;
+    cursor: pointer;
+    padding: 0.5vh;
+    margin: 1vh 0;
+}
+.rightPanelF2l th {
+    border:1px solid black;
 }
 /*
 .navigation {
@@ -123,3 +464,175 @@ nav img {
     background-color: #111;
 }
 */
+
+
+.casesDisplay {
+    display: none;
+}
+.caseSelectF2l img{
+    display: block;
+    border: 1px solid;
+    border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1fr;
+    height: 1fr;
+    z-index: -10;
+}
+:checked+.caseSelectF2l img {
+    transform: scale(0.9);
+    box-shadow: 0 0 5px #333;
+    z-index: -1;
+    border: 5px solid;
+    border-color: #ff3c00;
+    margin-top: -4px;
+    margin-bottom: -4px;
+  }
+
+.cases {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: none;
+    z-index: 10;
+    background-color: white;
+    width: 80%;
+    max-width: 80%;
+    box-shadow: 5px 5px;
+    max-height: 80%;
+    overflow: auto;
+}
+.cases.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+.casesHeader {
+    width: 100%;
+    padding: 0px 1%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.casesHeader .casesTitle {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.casesHeader .casesClose {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.casesContent {
+    padding-top: 15px;
+    width: 100%;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: grid;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    grid-gap: 1.25%;
+    z-index: -9;
+    height: 100%;
+}
+#randomizeF2l {
+    display: none;
+}
+#showSolutionsF2l {
+    display: none;
+}
+#nextCaseF2l {
+    display: none;
+}
+.options h2 {
+    border: 0.5vh solid;
+    border-radius: 25px;
+    margin: 0 1vh;
+    height: 0.5fr;
+    text-align: center;
+    background-color: #b5b5b5;
+    user-select: none;
+}
+:checked+.options h2 {
+    transform: scale(0.9);
+    box-shadow: 0 0 5px #333;
+    z-index: -1;
+    border: 5px solid;
+    border-color: #ff3c00;
+    background-color: yellow;
+    margin: 0px;
+  }
+#times {
+    width: 100%;
+}
+.stats {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: none;
+    z-index: 10;
+    background-color: white;
+    width: auto;
+    box-shadow: 5px 5px;
+    height: auto;
+}
+.stats.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+.statsHeader {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.statsHeader .statsTitle {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.statsHeader .statsClose {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.statsContent {
+    padding: 10px 15px;
+}
+#overlayStats {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    pointer-events: none;
+}
+#overlayStats.active {
+    opacity: 1;
+    pointer-events: all;
+}
+#statsRow1 {
+    display: inline-block;
+    vertical-align: top;
+}
+#statsRow1 p {
+    margin: 1vh;
+}
+#statsRow2 {
+    display: inline-block;
+    vertical-align: top;
+}
+#statsRow2 p {
+    margin: 1vh;
+}
